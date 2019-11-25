@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='C' lang='C'>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+<title>GParted Details</title>
+</head>
+<body>
+<p>GParted 0.32.0 --enable-libparted-dmraid --enable-online-resize</p>
+<p>Libparted 3.2</p>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<b>Delete /dev/sdc3 (linux-swap, 488.00 MiB) from /dev/sdc</b>&nbsp;&nbsp;00:00:09&nbsp;&nbsp;&nbsp;&nbsp;( SUCCESS )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+calibrate /dev/sdc3&nbsp;&nbsp;00:00:03&nbsp;&nbsp;&nbsp;&nbsp;( SUCCESS )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<i>path: /dev/sdc3 (partition)<br />start: 1890607104<br />end: 1891606527<br />size: 999424 (488.00 MiB)</i>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table border='0'>
+<tr>
+<td colspan='2'>
+delete partition&nbsp;&nbsp;00:00:06&nbsp;&nbsp;&nbsp;&nbsp;( SUCCESS )
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p>========================================</p>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<b>Move /dev/sdc2 to the right and shrink it from 901.41 GiB to 694.46 GiB</b>&nbsp;&nbsp;00:05:54&nbsp;&nbsp;&nbsp;&nbsp;( ERROR )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+calibrate /dev/sdc2&nbsp;&nbsp;00:00:03&nbsp;&nbsp;&nbsp;&nbsp;( SUCCESS )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<i>path: /dev/sdc2 (partition)<br />start: 206848<br />end: 1890607103<br />size: 1890400256 (901.41 GiB)</i>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table border='0'>
+<tr>
+<td colspan='2'>
+check file system on /dev/sdc2 for errors and (if possible) fix them&nbsp;&nbsp;00:01:01&nbsp;&nbsp;&nbsp;&nbsp;( SUCCESS )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<b><i>ntfsresize -i -f -v &apos;/dev/sdc2&apos;</i></b>&nbsp;&nbsp;00:01:01&nbsp;&nbsp;&nbsp;&nbsp;( SUCCESS )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<i>ntfsresize v2017.3.23AR.3 (libntfs-3g)<br />Device name        : /dev/sdc2<br />NTFS volume version: 3.1<br />Cluster size       : 4096 bytes<br />Current volume size: 967884927488 bytes (967885 MB)<br />Current device size: 967884931072 bytes (967885 MB)<br />Checking for bad sectors ...<br />Checking filesystem consistency ...<br />100.00 percent completed<br />Accounting clusters ...<br />Space in use       : 716853 MB (74.1%)<br />Collecting resizing constraints ...<br />Estimating smallest shrunken size supported ...<br />File feature         Last used at      By inode<br />Multi-Record       :    966406 MB        277773<br />$MFTMirr           :         1 MB             1<br />Compressed         :    875896 MB        325922<br />Sparse             :    265697 MB        198602<br />Ordinary           :    967883 MB        658790<br />You might resize at 716852068352 bytes or 716853 MB (freeing 251032 MB).<br />Please make a test run using both the -n and -s options before real resizing!<br /></i>
+</td>
+</tr>
+</table>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<i></i>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table border='0'>
+<tr>
+<td colspan='2'>
+shrink file system&nbsp;&nbsp;00:04:50&nbsp;&nbsp;&nbsp;&nbsp;( ERROR )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+run simulation&nbsp;&nbsp;00:04:50&nbsp;&nbsp;&nbsp;&nbsp;( ERROR )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<b><i>ntfsresize --force --force -s 745666510848 --no-action &apos;/dev/sdc2&apos;</i></b>&nbsp;&nbsp;00:04:50&nbsp;&nbsp;&nbsp;&nbsp;( ERROR )
+</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<i>ntfsresize v2017.3.23AR.3 (libntfs-3g)<br />Device name        : /dev/sdc2<br />NTFS volume version: 3.1<br />Cluster size       : 4096 bytes<br />Current volume size: 967884927488 bytes (967885 MB)<br />Current device size: 967884931072 bytes (967885 MB)<br />New volume size    : 745666507264 bytes (745667 MB)<br />Checking filesystem consistency ...<br />100.00 percent completed<br />Accounting clusters ...<br />Space in use       : 716853 MB (74.1%)<br />Collecting resizing constraints ...<br />Needed relocations : 21879933 (89621 MB)<br />Schedule chkdsk for NTFS consistency check at Windows boot time ...<br />Resetting $LogFile ... (this might take a while)<br />Relocating needed data ...<br />100.00 percent completed<br />Updating $BadClust file ...<br />Updating $Bitmap file ...<br />ERROR(5): Could not map attribute 0x80 in inode 99152: Input/output error<br /></i>
+</td>
+</tr>
+</table>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<i></i>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p>========================================</p>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<b>Move /dev/sdc4 to the left and grow it from 29.52 GiB to 236.48 GiB</b>
+</td>
+</tr>
+</table>
+<p>========================================</p>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<b>Move /dev/sdc5 to the left and grow it from 19.07 GiB to 207.95 GiB</b>
+</td>
+</tr>
+</table>
+<p>========================================</p>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<b>Move /dev/sdc6 to the left and grow it from 10.45 GiB to 28.53 GiB</b>
+</td>
+</tr>
+</table>
+<p>========================================</p>
+<table border='0'>
+<tr>
+<td colspan='2'>
+<b>Create Primary Partition #1 (linux-swap, 489.00 MiB) on /dev/sdc</b>
+</td>
+</tr>
+</table>
+<p>========================================</p>
+</body>
+</html>
